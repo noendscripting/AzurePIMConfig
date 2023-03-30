@@ -1,0 +1,120 @@
+{
+    "rules": [
+        //Rule to manage duration of activated roles
+        {
+            "ruleName": "Activation maximum duration (hours)",
+            "isExpirationRequired": true,
+            "maximumDuration": "P180D"
+        },
+        {
+            "ruleName": "On activation, require",
+            "multifactorRequired": false,
+            "justificationRequired": true,
+            "ticketRequired": false
+        },
+        {
+            "ruleName": "Require approval to activate",
+            "setting": {
+                "isApprovalRequired": true,
+                //if selected true add a stage object with array of apporver details
+                "approValStages": [
+                    {
+                        "approvalStageTimeOutInDays": 1,
+                        "isApproverJustificationRequired": true,
+                        "escalationTimeInMinutes": 0,
+                        "primaryApprovers": [
+                            //add as many approvers as needed in following id="<AAD GUID>",description="<AAD DisplayName>",isBackUp="<true or false>",usertype="<User or Group>"
+                            {
+                                "id": "c72990ad-8cf9-45dd-ab9a-016d2dd88c67",
+                                "description": "GiveMeAccess",
+                                "isBackup": false,
+                                "userType": "Group"
+                            },
+                            {
+                                "id": "82b18233-7541-4789-a139-f8221174ebb8",
+                                "description": "Beth F. Woodard",
+                                "isBackup": false,
+                                "userType": "User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        //Rule to set eligibility duration
+        {
+            "ruleName": "Allow permanent eligible assignment",
+            "isExpirationRequired": false,
+            //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+            "maximumDuration": ""
+        },
+        {
+            "ruleName": "Allow permanent active assignment",
+            "isExpirationRequired": true,
+            //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+            "maximumDuration": ""
+        },
+        {
+            "ruleName": "On active assignment, require",
+            "multifactorRequired": false,
+            "justificationRequired": true
+        },
+        //Send notifications when members are assigned as eligible to this role
+        {
+            "ruleName": "Role assignment alert",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Notification to the assigned user (assignee)",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Request to approve a role assignment renewal/extension",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        //Send notifications when members are assigned as active to this role:
+        {
+            "ruleName": "Role assignment alert",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Notification to the assigned user (assignee)",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Request to approve a role assignment renewal/extension",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        //Send notifications when eligible members activate this role
+        {
+            "ruleName": "Role activation alert",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Notification to activated user (requestor)",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        },
+        {
+            "ruleName": "Request to approve an activation",
+            "isDefaultRecipientsEnabled": true,
+            //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
+            "notificationRecipients": []
+        }
+    ]
+}
