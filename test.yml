@@ -1,0 +1,124 @@
+#Activation Rules Section
+
+##Rule to manage duration of activated roles
+-ruleName:Activation maximum duration (hours)
+  #true or false only
+ -isExpirationRequired:true
+  #must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+ -maximumDuration:P180D
+##Rule to set requirirments for activation
+-ruleName:On activation, require
+  #true or false only
+ -multifactorRequired:false
+ -justificationRequired:true
+ -ticketRequired:false
+## Rule to set approval properties for activation
+-ruleName:Require approval to activate
+  #true or false only
+ -isApprovalRequired:true
+  #if selected true add as many approvers as needed in following id="<AAD GUID>",description="<AAD DisplayName>",isBackUp="<true or false>",usertype="<User or Group>"
+ -approver:{id="c72990ad-8cf9-45dd-ab9a-016d2dd88c67",description="GiveMeAccess",isBackUp="false",usertype="Group"} 
+ -approver:{id="c72990ad-8cf9-45dd-ab9a-016d2dd88c67",description="GiveMeAccess",isBackUp="false",usertype="Group"}
+#Assigniment Rules Section
+
+## Rule to set eligibility duration
+-rulename:Allow permanent eligible assignment
+ #true or false only
+ -isExpirationRequired:false
+ #must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+ -maximumDuration:
+## Rule to set active assigniment duration
+-ruleName:Allow permanent active assignment
+ #true or false only
+ -isExpirationRequired:true
+ #must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+ -maximumDuration:
+## Rule to specify requirments for active assignment
+-ruleName:On active assignment, require
+  #true or false only
+ -multifactorRequired:false
+ -justificationRequired:true
+ 
+
+#Notification Rules
+
+##Send notifications when members are assigned as eligible to this role
+-ruleName:Role assignment alert
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Notification to the assigned user (assignee)
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Request to approve a role assignment renewal/extension
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+##Send notifications when members are assigned as active to this role:
+-ruleName:Role assignment alert
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Notification to the assigned user (assignee)
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Request to approve a role assignment renewal/extension
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+
+##Send notifications when eligible members activate this role
+
+-ruleName:Role activation alert
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Notification to activated user (requestor)
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+-ruleName:Request to approve an activation
+ #true or false only
+ -isDefaultRecipientsEnabled:true
+ #list email addreses seprated by comma
+ -notificationRecipients:
+
+##Rule to manage duration of activated roles
+section Activation maximum duration (hours){
+ 
+ isExpirationRequired = true
+  #must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+ maximumDuration = P180D
+}
+##Rule to set requirirments for activation
+section On activation, require {
+  #true or false only
+ multifactorRequired = false
+ justificationRequired = true
+ ticketRequired = false
+}
+
+
+
+
+
+
+

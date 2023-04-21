@@ -4,6 +4,7 @@
         {
             "ruleName": "Activation maximum duration (hours)",
             "isExpirationRequired": true,
+            //enter the max number of hours elible users can activate the role
             "maximumDuration": "P180D"
         },
         {
@@ -46,13 +47,13 @@
             "ruleName": "Allow permanent eligible assignment",
             "isExpirationRequired": false,
             //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
-            "maximumDuration": ""
+            "maximumDuration": "P180D"
         },
         {
             "ruleName": "Allow permanent active assignment",
             "isExpirationRequired": true,
             //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
-            "maximumDuration": ""
+            "maximumDuration": "P180D"
         },
         {
             "ruleName": "On active assignment, require",
@@ -61,38 +62,38 @@
         },
         //Send notifications when members are assigned as eligible to this role
         {
-            "ruleName": "Role assignment alert",
+            "ruleName": "Role assignment alert eligible",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
         },
         {
-            "ruleName": "Notification to the assigned user (assignee)",
+            "ruleName": "Notification to the assigned user (assignee) eligible",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
         },
         {
-            "ruleName": "Request to approve a role assignment renewal/extension",
+            "ruleName": "Request to approve a role assignment renewal/extension eligible",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
         },
         //Send notifications when members are assigned as active to this role:
         {
-            "ruleName": "Role assignment alert",
+            "ruleName": "Role assignment alert active",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
         },
         {
-            "ruleName": "Notification to the assigned user (assignee)",
+            "ruleName": "Notification to the assigned user (assignee) active",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
         },
         {
-            "ruleName": "Request to approve a role assignment renewal/extension",
+            "ruleName": "Request to approve a role assignment renewal/extension active",
             "isDefaultRecipientsEnabled": true,
             //list email addreses inside the sqare brakets surounded by qoutation marks and seprated by comma
             "notificationRecipients": []
