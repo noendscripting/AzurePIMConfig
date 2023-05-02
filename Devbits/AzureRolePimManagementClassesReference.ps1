@@ -1,3 +1,28 @@
+ISO 8601 Duration Format
+
+# PnYnMnDTnHnMnS
+
+^P                       # Duration start with 'P'
+(?:(\d+)Y)?               # Match optional years
+(?:(\d+)M)?               # Match optional months
+(?:(\d+)W)?               # Match optional weeks
+(?:(\d+)D)?               # Match optional days
+(?:T                       # Time separator
+(?:(\d+)H)?               # Match optional hours
+(?:(\d+)M)?               # Match optional minutes
+(?:(\d+(?:\.\d+)?)S)?     # Match optional seconds, including fractional seconds
+)?                        # End time section
+$
+
+
+'^P(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)W)?(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$'
+
+
+
+
+
+
+
 #region Assigniment Settings 
 
 #Setting Role Assignment Rules

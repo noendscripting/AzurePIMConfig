@@ -4,8 +4,8 @@
         {
             "ruleName": "Activation maximum duration (hours)",
             "isExpirationRequired": true,
-            //enter the max number of hours elible users can activate the role
-            "maximumDuration": "P180D"
+            //enter the max number of hours elible users can activate the role use ISO 8601 format PT#H
+            "maximumDuration": "PT24H"
         },
         {
             "ruleName": "On activation, require",
@@ -46,13 +46,13 @@
         {
             "ruleName": "Allow permanent eligible assignment",
             "isExpirationRequired": false,
-            //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+            //enter max days or months allowed for eligible assignment if isExpration is set to false assignment use ISO 8601 format P#D or P#M
             "maximumDuration": "P180D"
         },
         {
             "ruleName": "Allow permanent active assignment",
             "isExpirationRequired": true,
-            //must be entered in dateIntrval format see for details https://www.php.net/manual/en/dateinterval.construct.php
+            //enter max days or months allowed for active assignment if isExpration is set to false assignment use ISO 8601 format P#D or P#M
             "maximumDuration": "P180D"
         },
         {
